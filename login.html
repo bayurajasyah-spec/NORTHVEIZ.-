@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <link rel="icon" href="images/logowhite.jpg" type="image/x-icon">
+        <!-- css -->
+        <link rel="stylesheet" href="Style/login.css">
+        <link rel="stylesheet" href="Style/main.css">
+        <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <!-- icon -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <title>NORTHVEIZ</title>
+    </head>
+<body>
+    <header class="container" id="header">
+        <div class="header_top">
+              <div class="header_social">
+                <a href="https://www.instagram.com/northveiz?igsh=MWEwZzFpeHJzdzNhbg==" target="_blank">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="https://www.tiktok.com/@northveiz?_t=ZS-8yCxhIk9nmM&_r=1" target="_blank">
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                </a>
+           </div>
+              <img src="images/logo_block.jpg" alt="page logo" id="logo">
+              <div class="header_actions">
+                <div id="display_login">
+                  <span id="user_name">OUT</span>
+                  <a href="#" id="logout" title="Logout" onclick="logout();">
+                   <ion-icon name="log-out-outline"></ion-icon>
+                  </a>
+                </div>
+                <a href="login.html" title="Login" id="login_btn">
+                 <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+                <a href="#" class="icon-cart">
+                  <ion-icon name="cart-outline"></ion-icon>
+                  <span id="cart-counter">0</span>
+                </a>
+           </div>
+        </div>
+        <nav>
+            <menu>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="products.html">SHOP</a></li>
+                    <li><a href="ABOUT.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </menu>
+        </nav>
+    </header>
+    <section id="login">
+       <div class="container">
+        <h1 class="section-header">Login</h1>
+        <div id="form">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Email" id="email" onblur="validationEmail();">
+            <span id="invalidEmail" class="alert">Email is not a valid</span>
+            <label for="password">Password</label>
+            <input type="password" name="Password" placeholder="Password" id="password" onblur="validPassword();">
+            <span id="invalidPass" class="alert">Password must be 8 chars at least</span>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" 
+            placeholder="Confirm Password" 
+            id="confirmPassword" 
+            onblur="validConfirmPassword();">
+            <span id="invalidConfirmPass" class="alert">Password Not Match</span>
+            <div class="submit">
+                <button id="btn-login">Sign In</button> 
+                <a href="signup.html" id="signup">New customer? Sign up for an account</a>
+            </div>  
+        </div>
+       </div>
+        
+    </section>
+    <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
+     <!-- cart -->
+    <div class="cart-section">
+        <div class="cart-header">
+            <h2>SHOPPING CART</h2>
+            <div class="closeCart">
+                <ion-icon name="close-outline" id="closeCart"></ion-icon>
+            </div>
+        </div>
+        <div class="cart_products">
+              <!-- add cart products in js -->
+        </div>
+        <div class="cart_total">
+            <h3>Total:</h3>
+            <span id="total_price"></span>
+        </div>
+        <div class="btn_control">
+            <button class="viewCart" onclick="viewCart();">View Cart</button>
+            <button class="checkout" onclick="checkOut();">Check Out</button>
+            </div>
+        <div class="payment">
+            <h1 class="payTitle">Personal Information</h1>
+            <label>Name and Surname</label>
+            <input type="text" placeholder="John Doe" class="payInput">
+            <label>Phone Number</label>
+            <input type="text" placeholder="+62 734 5678" class="payInput">
+            <label>Address</label>
+            <input type="text" placeholder="Elton St 21 22-145" class="payInput">
+            <h1 class="payTitle">Card Information</h1>
+            <div class="cardIcons">
+                <img src="./img/visa.png" width="40" alt="" class="cardIcon">
+                <img src="./img/paypal.png" alt="" width="40" class="cardIcon">
+                <img src="./img/gopay.png" alt="" width="40" class="cardIcon">
+            </div>
+            <input type="password" class="payInput" placeholder="Card Number">
+            <div class="cardInfo">
+                <input type="text" placeholder="mm" class="payInput sm">
+                <input type="text" placeholder="yyyy" class="payInput sm">
+                <input type="text" placeholder="cvv" class="payInput sm">
+            </div>
+            <button class="payButton">Checkout!</button>
+            <span class="close">X</span>
+        </div>
+        </div>
+
+           
+
+    </footer>
+    <script src="JavaScript/main.js"></script>
+   <script src="JavaScript/validation.js"></script>
+   <script src="JavaScript/cart.js"></script>
+</body>
+</html>
